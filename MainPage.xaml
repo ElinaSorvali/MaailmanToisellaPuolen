@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaailmanToisellaPuolen.MainPage"
+             BackgroundColor="#f0f4f8">
+
+    <AbsoluteLayout>
+        <!-- Maapallo-kuva taustalla -->
+        <Image Source="Kuvat/maapallo.jpg"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Otsikko kuvan päällä -->
+        <Label Text="Toisella Puolella"
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="#FFFFFF"
+               HorizontalTextAlignment="Center"
+               Padding="10,5"
+               AbsoluteLayout.LayoutBounds="0.5, 0.1, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <!-- Pääasiallinen sisältö -->
+        <VerticalStackLayout x:Name="MainLayout" 
+                             VerticalOptions="CenterAndExpand" 
+                             Spacing="20"
+                             Padding="20"
+                             AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <!-- Latitude ja Longitude -->
+            <Frame Padding="15" 
+                   BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   HorizontalOptions="Center" 
+                   WidthRequest="300">
+
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label x:Name="lat_label" 
+                           FontSize="18" 
+                           TextColor="#333" 
+                           HorizontalTextAlignment="Center" 
+                           Text="Latitude: -" />
+
+                    <Label x:Name="lon_label" 
+                           FontSize="18" 
+                           TextColor="#333" 
+                           HorizontalTextAlignment="Center" 
+                           Text="Longitude: -" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Antipodi -->
+            <Frame Padding="10" 
+                   BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <Label x:Name="antipodi_label" 
+                       FontSize="18" 
+                       TextColor="#333" 
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>
